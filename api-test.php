@@ -1,13 +1,12 @@
 <?php
-$end="https://search.usa.gov/api/v2/search";
 
 //insert your DG access key
 $key="";
 
-//insery your DG affiliate
+//insert your DG affiliate
 $aff="";
 
-
+//takes user input
 if(!empty($_GET['query'])){
 
 $api_url = 'https://search.usa.gov/api/v2/search?affiliate='. $aff .'&access_key='. $key .'&query='. urlencode($_GET['query']);
@@ -29,10 +28,12 @@ $search_array = json_decode($search_json, true);
 	
 
 		<body>
-			<h1>Search API Test Results for Grants</h1>
-
+			<h1>Search API Test Results</h1>
+			
 		<form action="" method="get" autocomplete="off">
-		<input type="text" name="query" class="form-control" placeholder="Search Twitter Database">
+			
+		//passes user input into url as query	
+		<input type="text" name="query" class="form-control" placeholder="Search">
 		<br />
 		<button type="submit">Submit</button>
 		</form>
