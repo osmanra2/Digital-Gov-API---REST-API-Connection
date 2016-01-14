@@ -23,7 +23,6 @@ $search_array = json_decode($search_json, true);
 		<title>Search API Test</title>
 	</head>
 	
-
 		<body>
 			<h1>Search API Test Results for Grants</h1>
 
