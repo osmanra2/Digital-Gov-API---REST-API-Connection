@@ -1,4 +1,4 @@
-# Digital-Gov-API---REST-API-Connection
+# Digital-Gov-API---REST-API-Connection PHP
 Small script that give you the ability to connect to Digital Gov rest API to return search results for you in PHP
 
 Make sure you have a local server running on your machine (I am using WAMP on windows or MAMP on MAC/Linux)
