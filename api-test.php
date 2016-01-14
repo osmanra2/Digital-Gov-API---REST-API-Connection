@@ -17,7 +17,6 @@ $search_array = json_decode($search_json, true);
 }
 
 
-
 ?>
 
 <!DOCTYPE HTML>
