@@ -6,8 +6,9 @@ $key="";
 //insert your DG affiliate
 $aff="";
 
-//takes user input
-if(!empty($_GET['query'])){
+
+
+if(isset($_GET['query'])){
 
 $api_url = 'https://search.usa.gov/api/v2/search?affiliate='. $aff .'&access_key='. $key .'&query='. urlencode($_GET['query']);
 
@@ -15,6 +16,7 @@ $search_json = file_get_contents($api_url);
 $search_array = json_decode($search_json, true);
 
 }
+
 
 
 ?>
@@ -27,11 +29,9 @@ $search_array = json_decode($search_json, true);
 	
 
 		<body>
-			<h1>Search API Test Results</h1>
-			
+			<h1>Search API Test Results for Grants</h1>
+
 		<form action="" method="get" autocomplete="off">
-			
-		//passes user input into url as query	
 		<input type="text" name="query" class="form-control" placeholder="Search">
 		<br />
 		<button type="submit">Submit</button>
@@ -39,6 +39,8 @@ $search_array = json_decode($search_json, true);
 
 
 		<?php
+		if(isset($search_array)){ 
+
 		if($search_array['web']['total']>=1) {
 
 		echo "<p>Total Results " . $search_array['web']['total'] . "</p>";
@@ -58,7 +60,7 @@ $search_array = json_decode($search_json, true);
 			echo '<br />' . $key['publication_date'] . '</p>';
 
 		}
-
+		}
 		?>
 
 
@@ -67,4 +69,4 @@ $search_array = json_decode($search_json, true);
 
 
 
-</html>  
+</html> 
